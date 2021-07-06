@@ -9,19 +9,19 @@
         "Link1":[
             {
                 "Length" :5,
-                "Mass" : 5000   
+                "Mass" : 974.917405   
             }
         ],
         "Link2":[
             {
                 "Length" :6,
-                "Mass" : 6000
+                "Mass" : 598.6246092
             }
         ],
         "Connector":[
             {
                 "Length" :1,
-                "Mass" : 300
+                "Mass" : 100
             }
 
         ]
