@@ -1,4 +1,4 @@
-function [q] = inverseKinematics(p)
+function [q] = inverseKinematicsSpong(p)
     % Determines the required joint angles for a given coordinate in [x,y,z]
     % 
     % Inputs
@@ -24,16 +24,16 @@ le = rob.Links.Connector.Length;
 x= p(1);
 y= p(2);
 z= p(3);
-
+d=0
 % magnitude of the vector to the connector
-dSq = x^2+y^2+z^2;
-d = sqrt(dSq);
+r = x^2+y^2+z^2;
+s = z;
+D = (r-l1^2-l2^2)/(2*l1*l2);
+
 
 % determing angles
 theta1 = atan2(y/sqrt(x^2+y^2),x/sqrt(x^2+y^2));
-gamma = acos((-l2^2-(l1^2+dSq))/(2*l1*dSq));
-theta2 = gamma + atan(z/sqrt(x^2+y^2));
-theta3 = acos(-(dSq-(l1^2+l2^2))/(2*l1*l2));
-
+theta3 = atan2(sqrt(1-D^2),D);
+theta2 = atan2(s,r) - atan2(l2*sin(theta3),l1+l2*cos(theta3));
 
 q = [theta1 theta2 theta3];
