@@ -1,0 +1,29 @@
+{
+    "Links": {
+        "Base":[
+            {
+                "Length" : 1,
+                "Mass" : 100
+            }
+        ],
+        "Link1":[
+            {
+                "Length" :5,
+                "Mass" : 5000   
+            }
+        ],
+        "Link2":[
+            {
+                "Length" :6,
+                "Mass" : 6000
+            }
+        ],
+        "Connector":[
+            {
+                "Length" :1,
+                "Mass" : 300
+            }
+
+        ]
+    }
+}

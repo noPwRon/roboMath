@@ -1,0 +1,33 @@
+function [q] = inverseKinematics(p)
+    % Inputs
+    % x - x location of the wrist
+    % y - y location of the wrist
+    % z - z location of the wrist
+    % 
+    % Outputs
+    % theta1 - joint 1 in radians
+    % theta2 - joint 2 in radians
+    % theta3 - joint 3 in radians
+    
+rob = roboStatCall
+
+l_b = rob.Links.Base.Length;
+l_1 = rob.Links.Link1.Length;
+l_2 = rob.Links.Link2.Length;
+l_e = rob.Links.Connector.Length;
+    
+x= p(1)
+y= p(2)
+z= p(3)
+
+dSq = x^2+y^2+z^2;
+d = sqrt(dSq);
+
+theta1 = atan2(y/(sqrt(x^2+y^2),x/(sqrt(x^2+y^2))))
+
+theta3 = acos(-(dSq-(l1^2+l2^2))/(2*l1*l2))
+
+gamma = acos(-l2^2-(l1^2+dSq))/(2*l1*dSq))
+
+
+q = [theta1 theta2 theta3];
