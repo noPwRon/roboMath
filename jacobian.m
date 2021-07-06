@@ -1,20 +1,14 @@
 function [J] = jacobian(q, T01,T02,T03)
-%ForwardKinematics Performs forward kinematics
-%   • Inputs (see Section A for a description of the following):
-%       Length of links:
-%           l_b
-%           l_1
-%           l_2
-%           l_e
-%       Joint Angles:
-%           theta_1
-%           theta_2
-%           theta_3
-%           theta_4
-%           theta_5
-%       
-%   • Outputs
-%      Jacobian matrix
+% Generates a jacobian matrix based on the current robotic model and joint angles q
+% 
+% Inputs
+%   q - a 3x1 matrix of joint angles
+%   T01 - transformation matrix from frame 1 to frame 0
+%   T02 - transformation matrix from frame 2 to frame 0
+%   T03 - transformation matrix from frame 3 to frame 0 
+%  
+% Outputs
+%   Jacobian matrix
 
 %Self note: [A] = DH(theta, d, a, alpha)
 

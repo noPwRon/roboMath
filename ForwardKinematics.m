@@ -1,14 +1,17 @@
 function [pos rot T01 T02 T03] = ForwardKinematics(q,wrist_offset)
-%ForwardKinematics Performs forward kinematics
-%   • Inputs (see Section A for a description of the following):
-%       Length of links:
-%           l_b
-%           l_1
-%           l_2
-%           l_e
-%       
-%   • Outputs
-%      Transformation Matricies
+% Determines the position and rotation of the end effector of the marine robot
+% 
+% Inputs 
+%   q - a 3x1 vector of joint angles
+%   wrist_offset - The transoformation matrix from the wrist to end effector tip (Optional)
+% 
+% Outputs
+%   pos - position of the end effector
+%   rot - rotation matrix of the end effector
+%   T01 - transformation matrix from frame 1 to frame 0
+%   T02 - transformation matrix from frame 2 to frame 0
+%   T03 - transformation matrix from frame 3 to frame 0  
+    
 
 %Self note: [A] = DH(theta, d, a, alpha)
 

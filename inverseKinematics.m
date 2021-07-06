@@ -1,4 +1,6 @@
 function [q] = inverseKinematics(p)
+    % Determines the required joint angles for a given coordinate in [x,y,z]
+    % 
     % Inputs
     % x - x location of the wrist
     % y - y location of the wrist
