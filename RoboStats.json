@@ -24,14 +24,17 @@
                 "Mass" : 300
             }
 
-        ],
-        "DH":[
-            {   
-                "Link1" : [0,0,"lb","theta1"],
-                "Link2" : ["-l1",0,0,"theta2+pi/2"],
-                "Link3" : ["-l2",0,0,"theta3+pi/2"]
-            }
         ]
-    }
-    
+    },
+        "DH": {   
+                "Link1" : [
+                    {
+                    "a":0,
+                    "alpha":0,
+                    "d":"lb",
+                    "theta":"theta1"
+                    }
+                ]
+                
+            }   
 }

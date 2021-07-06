@@ -1,4 +1,4 @@
-function [pos rot T] = ForwardKinematics(q,wrist_offset)
+function [pos rot T01 T02 T03] = ForwardKinematics(q,wrist_offset)
 %ForwardKinematics Performs forward kinematics
 %   • Inputs (see Section A for a description of the following):
 %       Length of links:
@@ -37,9 +37,7 @@ T23 = DH(l2,0,0,(theta3+pi/2));
 T02 = T01*T12;
 T03 = T01*T12*T23;
 
-T = [T01; T02; T03];
-
-pos = T(1:3,4);
-rot = T(1:3,1:3);
+pos = T03(1:3,4);
+rot = T03(1:3,1:3);
  
 

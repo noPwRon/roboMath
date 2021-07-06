@@ -1,4 +1,4 @@
-function [J] = jacobian(q)
+function [J] = jacobian(q, T01,T02,T03)
 %ForwardKinematics Performs forward kinematics
 %   • Inputs (see Section A for a description of the following):
 %       Length of links:
@@ -29,12 +29,6 @@ theta1 = q(1);
 theta2 = q(2);
 theta3 = q(3);
 
-T01 = DH(0,0,lb,theta1);
-T12 = DH(-l1,0,0,theta2+pi/2);
-T23 = DH(-l2,0,0,theta3+pi/2);
-
-T02 = T01*T12;
-T03 = T01*T12*T23;
 
 o_0 = [0;0;0];
 o_1 = T01(1:3,4);
