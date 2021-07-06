@@ -54,6 +54,8 @@ J = jacobian([0,0,0],T01,T02,T03)
 Jv = J(1:3,:);
 Jw = J(4:6,:);
 
+F = [0;100*9.81;0];
 
+tau = staticTorques(J,F)
 
 
