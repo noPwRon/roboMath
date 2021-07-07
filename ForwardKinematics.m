@@ -1,4 +1,4 @@
-function [pos rot T01 T02 T03] = ForwardKinematics(q,wrist_offset)
+function [pos rot T01 T02 T03 T04] = ForwardKinematics(q,wrist_offset)
 % Determines the position and rotation of the end effector of the marine robot
 % 
 % Inputs 
@@ -33,14 +33,15 @@ theta1 = q(1);
 theta2 = q(2);
 theta3 = q(3);
 
-T01 = DH(0,0,lb,theta1);
+T01 = DH(0,pi/2,lb,theta1);
 T12 = DH(l1,0,0,(theta2+pi/2));
 T23 = DH(l2,0,0,(theta3+pi/2));
 
 T02 = T01*T12;
 T03 = T01*T12*T23;
+T04 = T03*wrist_offset;
 
-pos = T03(1:3,4);
-rot = T03(1:3,1:3);
+pos = T04(1:3,4);
+rot = T04(1:3,1:3);
  
 

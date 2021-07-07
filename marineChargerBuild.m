@@ -46,7 +46,7 @@ T03 = T01*T12*T23;
 
 pos = T03(1:3,4);
 
-[pos rot T01 T02 T03] = ForwardKinematics([0,0,0]);
+[pos rot T01 T02 T03 T04] = ForwardKinematics([0,0,0]);
 q1 = inverseKinematics(pos);
 q2 = inverseKinematicsSpong(pos);
 
