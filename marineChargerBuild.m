@@ -24,27 +24,24 @@ l_e = rob.Links.Connector.Length;
 
 % l_b l_1 l_2 l_e 
 
-syms c1 c2 c3 s1 s2 s3 lb l1 l2 theta1 theta2 theta3
-
-
-
-T01 = [c1 -s1 0 0;
-    s1 c1 0 0;
-    0 0 1 lb;
-    0 0 0 1];
-T12 = [-s2 -c2 0 -l1*s2;
-    c2 -s2 0 l1*c2;
-    0 0 1 0;
-    0 0 0 1];
-T23 = [-s3 -c3 0 -l2*s2;
-    c3 -s3 0 l2*c2;
-    0 0 1 0;
-    0 0 0 1];
-
-T02 = T01*T12;
-T03 = T01*T12*T23;
-
-pos = T03(1:3,4);
+% syms c1 c2 c3 s1 s2 s3 lb l1 l2 theta1 theta2 theta3
+% T01 = [c1 -s1 0 0;
+%     s1 c1 0 0;
+%     0 0 1 lb;
+%     0 0 0 1];
+% T12 = [-s2 -c2 0 -l1*s2;
+%     c2 -s2 0 l1*c2;
+%     0 0 1 0;
+%     0 0 0 1];
+% T23 = [-s3 -c3 0 -l2*s2;
+%     c3 -s3 0 l2*c2;
+%     0 0 1 0;
+%     0 0 0 1];
+% 
+% T02 = T01*T12;
+% T03 = T01*T12*T23;
+% 
+% pos = T03(1:3,4);
 
 [pos rot T01 T02 T03 T04] = ForwardKinematics([0,0,0]);
 q1 = inverseKinematics(pos);
